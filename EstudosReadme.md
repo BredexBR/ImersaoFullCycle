@@ -136,6 +136,22 @@ Refere-se a imersao da FullCycle utilizando as tecnologias:
    ```bash
    docker-compose -f docker-compose.with-db.yaml up -d
 
+### Go
+- Para instalar todas as ferramentas e fazer as atualizações do Go para utilizar no VS Code:
+  Dentro do vs code aperte Ctrl+Shif+P escreva go: install/update tools selecione a caixinha branca ao lado esquerdo de todos.
+
+- Para testar se tudo funcionou corretamente escreva "go" no terminal pressione enter e veja se aparece na primeira linha "Go is a tool for managing Go source code." e abaixo todas as informações.
+
+- Para importar os arquivos dentro do programa:
+   ```bash
+   go mod init https://github.com/BredexBR/ImersaoFullCycle/golang
+
+- A pasta "internal" no projeto vai ser o local onde sera configurado as bibliotecas internas.
+
+- Para baixar as dependências dos projetos por exemplo(uuid):
+   ```bash
+   go mod tidy 
+   
 ### Extensões do VS Code:
 - Prisma (Suporte para utilizar o prisma no VS Code)
 - ESLint (verificar possíveis erros de javaScript)
@@ -145,3 +161,4 @@ Refere-se a imersao da FullCycle utilizando as tecnologias:
 - REST Client (Poder testar mais facilmente as requisições http)
 - WSL (Poder utilizar ambiente linux no VS Code)
 - Dev Containers (Integração do VS Code com o DOCKER)
+- GO (para poder utilizar a linguagem go dentro do VS Code)
