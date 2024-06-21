@@ -152,6 +152,22 @@ Refere-se a imersao da FullCycle utilizando as tecnologias:
    ```bash
    go mod tidy 
    
+### Next.JS
+- Para criar um projeto typescript com next.js basta inserir no terminal::
+   ```bash
+   npx create-next-app --typescript
+
+- Apos isso vai perguntar qual o nome do projeto que sera criado, se deseja utilizar 
+junto do projeto ESLint(YES), Tailwind CSS(YES), criar um diretorio src(YES), app router(YES), importar 
+alias(No).
+
+- Sera criadas as pastas node_modules(modulos do node), public(local onde sera inserido as imagens),
+src(local onde sera feito o projeto), package.json(dependências), 
+
+- Para rodar o código, dirija-se a pasta que esta o next e insira no terminal:   
+   ```bash
+   npm run dev
+
 ### Extensões do VS Code:
 - Prisma (Suporte para utilizar o prisma no VS Code)
 - ESLint (verificar possíveis erros de javaScript)
@@ -162,3 +178,4 @@ Refere-se a imersao da FullCycle utilizando as tecnologias:
 - WSL (Poder utilizar ambiente linux no VS Code)
 - Dev Containers (Integração do VS Code com o DOCKER)
 - GO (para poder utilizar a linguagem go dentro do VS Code)
+- Tailwind CSS IntelliSense (trabalha com classes utilitárias(escondem propriedades de CSS))
