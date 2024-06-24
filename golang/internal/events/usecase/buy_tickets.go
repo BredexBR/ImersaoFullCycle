@@ -8,7 +8,11 @@ import (
 type BuyTicketsInputDTO struct {
 	EventID    string   `json:"event_id"`
 	Spots      []string `json:"spots"`
+<<<<<<< HEAD
 	TicketType string   `json:"ticket_type"`
+=======
+	TicketKind string   `json:"ticket_kind"`
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 	CardHash   string   `json:"card_hash"`
 	Email      string   `json:"email"`
 }
@@ -20,7 +24,11 @@ type BuyTicketsOutputDTO struct {
 type TicketDTO struct {
 	ID         string  `json:"id"`
 	SpotID     string  `json:"spot_id"`
+<<<<<<< HEAD
 	TicketType string  `json:"ticket_type"`
+=======
+	TicketKind string  `json:"ticket_kind"`
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 	Price      float64 `json:"price"`
 }
 
@@ -47,7 +55,11 @@ func (uc *BuyTicketsUseCase) Execute(input BuyTicketsInputDTO) (*BuyTicketsOutpu
 	req := &service.ReservationRequest{
 		EventID:    input.EventID,
 		Spots:      input.Spots,
+<<<<<<< HEAD
 		TicketType: input.TicketType,
+=======
+		TicketKind: input.TicketKind,
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 		CardHash:   input.CardHash,
 		Email:      input.Email,
 	}
@@ -72,7 +84,11 @@ func (uc *BuyTicketsUseCase) Execute(input BuyTicketsInputDTO) (*BuyTicketsOutpu
 			return nil, err
 		}
 
+<<<<<<< HEAD
 		ticket, err := domain.NewTicket(event, spot, domain.TicketType(input.TicketType))
+=======
+		ticket, err := domain.NewTicket(event, spot, domain.TicketKind(input.TicketKind))
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 		if err != nil {
 			return nil, err
 		}
@@ -96,7 +112,11 @@ func (uc *BuyTicketsUseCase) Execute(input BuyTicketsInputDTO) (*BuyTicketsOutpu
 		ticketDTOs[i] = TicketDTO{
 			ID:         ticket.ID,
 			SpotID:     ticket.Spot.ID,
+<<<<<<< HEAD
 			TicketType: string(ticket.TicketType),
+=======
+			TicketKind: string(ticket.TicketKind),
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 			Price:      ticket.Price,
 		}
 	}

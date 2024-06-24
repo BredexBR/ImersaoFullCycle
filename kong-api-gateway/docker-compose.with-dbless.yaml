@@ -22,4 +22,10 @@ services:
       KONG_ADMIN_GUI_URL: http://localhost:8002
     volumes:
       - ./kong/declarative:/kong/declarative
+<<<<<<< HEAD
+=======
+    extra_hosts:
+      - host.docker.internal:host-gateway
+  
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 

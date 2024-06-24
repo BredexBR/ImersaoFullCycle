@@ -30,7 +30,11 @@ Content-Type: application/json
 {
     "event_id": "2f8c9dcb-56ea-4e9b-a1c6-5fe711c47416",
     "spots": ["A1"],
+<<<<<<< HEAD
     "ticket_type": "full",
+=======
+    "ticket_kind": "full",
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
     "card_hash": "example_card_hash",
     "email": "user@example.com"
 }

@@ -27,9 +27,21 @@ type Partner2ReservationResponse struct {
 }
 
 func (p *Partner2) MakeReservation(req *ReservationRequest) ([]ReservationResponse, error) {
+<<<<<<< HEAD
 	partnerReq := Partner2ReservationRequest{
 		Lugares:      req.Spots,
 		TipoIngresso: req.TicketType,
+=======
+	TipoIngresso := req.TicketKind
+	if TipoIngresso == "full" {
+		TipoIngresso = "inteira"
+	} else {
+		TipoIngresso = "meia"
+	}
+	partnerReq := Partner2ReservationRequest{
+		Lugares:      req.Spots,
+		TipoIngresso: TipoIngresso,
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 		Email:        req.Email,
 	}
 

@@ -9,7 +9,7 @@ Refere-se a imersao da FullCycle utilizando as tecnologias:
 ## Objetivo:
 - Desenvolver um sistema de venda de ingresos com grande demanda de clientes utilizando o site simultaneamente.
 - Gerenciamento de eventos/processamento de reservas.
-- integração com sistemas de parceiros.
+- Integração com sistemas de parceiros.
 
 
 ## Bibliotecas/Ferramentas
@@ -47,7 +47,7 @@ Refere-se a imersao da FullCycle utilizando as tecnologias:
 - Para gerar novos CRUDS basta inserir:
    ```bash
    nest g resource 
-- escolha o nome do recurso e selecione a opção "REST API".
+- Escolha o nome do recurso e selecione a opção "REST API".
 
 - Para gerar um modulo do prisma:
    ```bash
@@ -62,6 +62,24 @@ Refere-se a imersao da FullCycle utilizando as tecnologias:
    nest g library
 
 - Após isso escolha o nome "core" e pressione enter novamente(caso escreve alguma palavra obtera um prefixo)..
+
+- Para rodar a aplicação nest dentro de sua pasta "nestjs-partners-api" digite no terminal:(projeto final)
+   ```bash
+   docker compose exec nestjs bash
+
+- Após isso:
+   ```bash
+   npm run migrate:partner1
+   npm run migrate:partner2
+
+- Para criar os dados do projeto(partner1):
+   ```bash
+   npm run start partner1-fixture
+
+- E também(partner2):
+   ```bash
+   npm run start partner2-fixture
+
 
 ### Docker:
 - Para gerar o SQL com o Docker basta adicionar as configurações em um arquivo .yaml como por exemplo docker-compose.yaml e inserir o comando:
@@ -82,10 +100,26 @@ Refere-se a imersao da FullCycle utilizando as tecnologias:
    ```bash
    docker compose exec app bash
 
-- após o comando anterior:
+- Após o comando anterior:
    ```bash
    npm install @prisma/client
 
+- Para remover todos os containers criados no docker(ativos e inativos):
+   ```bash
+   docker rm $(docker ps -a -q)
+
+- Para utilizar a configuração dentro do docker-compose.yaml de host, editar o arquivo no terminal(como administrador)
+   ```bash
+   cd C:\Windows\System32\drivers\etc>
+
+- Após entrar nesse diretório
+   ```bash
+   notepad hosts
+
+- E adicionar a linha:
+   ```bash
+   127.0.0.1 host.docker.internal
+   
 ### Dev Containers:
 - Após a instalação va na pesquisa do VS CODE no centro superior e digite:
    ```bash
@@ -150,7 +184,11 @@ Refere-se a imersao da FullCycle utilizando as tecnologias:
 
 - Para baixar as dependências dos projetos por exemplo(uuid):
    ```bash
-   go mod tidy 
+   go mod tidy
+
+- Para rodar a aplicação Go dentro da pasta golang digite no terminal(projeto final)
+   ```bash
+   go run cmd/events/main.go
    
 ### Next.JS
 - Para criar um projeto typescript com next.js basta inserir no terminal::
@@ -168,7 +206,7 @@ src(local onde sera feito o projeto), package.json(dependências),
    ```bash
    npm run dev
 
-### Extensões do VS Code:
+### Extensões utilizadas do VS Code:
 - Prisma (Suporte para utilizar o prisma no VS Code)
 - ESLint (verificar possíveis erros de javaScript)
 - Prettier - Code formatter (Auxiliar nas "boas práticas" do código)

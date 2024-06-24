@@ -79,7 +79,11 @@ func setupTestDB() error {
 			id VARCHAR(36) NOT NULL PRIMARY KEY,
 			event_id VARCHAR(36) NOT NULL,
 			spot_id VARCHAR(36) NOT NULL,
+<<<<<<< HEAD
 			ticket_type VARCHAR(10) NOT NULL,
+=======
+			ticket_kind VARCHAR(10) NOT NULL,
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 			price FLOAT NOT NULL,
 			FOREIGN KEY (event_id) REFERENCES events(id),
 			FOREIGN KEY (spot_id) REFERENCES spots(id)
@@ -192,7 +196,11 @@ func TestMysqlEventRepository(t *testing.T) {
 			ID:         ticketID,
 			EventID:    eventID,
 			Spot:       spot,
+<<<<<<< HEAD
 			TicketType: domain.TicketTypeFull,
+=======
+			TicketKind: domain.TicketKindFull,
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 			Price:      50.0,
 		}
 		err = repo.CreateTicket(ticket)

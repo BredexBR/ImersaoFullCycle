@@ -14,6 +14,10 @@ import { CreateEventRequest } from './request/create-event.request';
 import { UpdateEventRequest } from './request/update-event.request';
 import { ReserveSpotRequest } from './request/reserve-spot.request';
 import { AuthGuard } from '@app/core/auth/auth.guard';
+<<<<<<< HEAD
+=======
+import { ReserveSpotResponse } from './response/reserve-spot.response';
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
 
 @Controller('events')
 export class EventsController {
@@ -50,10 +54,22 @@ export class EventsController {
 
   @UseGuards(AuthGuard)
   @Post(':id/reserve')
+<<<<<<< HEAD
   reserveSpots(
     @Body() reserveRequest: ReserveSpotRequest,
     @Param('id') eventId: string,
   ) {
     return this.eventsService.reserveSpot({ ...reserveRequest, eventId });
+=======
+  async reserveSpots(
+    @Body() reserveRequest: ReserveSpotRequest,
+    @Param('id') eventId: string,
+  ) {
+    const tickets = await this.eventsService.reserveSpot({
+      ...reserveRequest,
+      eventId,
+    });
+    return new ReserveSpotResponse(tickets);
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
   }
 }

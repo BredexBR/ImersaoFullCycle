@@ -13,7 +13,11 @@ services:
       - 8004:8004
     environment:
       KONG_DATABASE: postgres
+<<<<<<< HEAD
       KONG_PG_HOST: localhost
+=======
+      KONG_PG_HOST: db
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
       KONG_PG_DATABASE: kong
       KONG_PG_USER: kong
       KONG_PG_PASSWORD: kong
@@ -28,7 +32,11 @@ services:
   
   db:
     image: postgres:13-alpine
+<<<<<<< HEAD
     #network_mode: "host"
+=======
+    network_mode: "host"
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
     ports:
       - 5432:5432
     environment:
@@ -52,10 +60,16 @@ services:
   kong-migrations:
     image: kong:3.7
     command: kong migrations bootstrap
+<<<<<<< HEAD
     #network_mode: "host"
     environment:
       KONG_DATABASE: postgres
       KONG_PG_HOST: localhost
+=======
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: db
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
       KONG_PG_DATABASE: kong
       KONG_PG_USER: kong
       KONG_PG_PASSWORD: kong

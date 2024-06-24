@@ -1,16 +1,38 @@
+<<<<<<< HEAD
 version: '3.8'
 
 services:
   mysql:
     image: mysql:8.0
     container_name: test-mysql
+=======
+services:
+
+  golang:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  golang-mysql:
+    image: mysql:8.0.30-debian
+    #container_name: test-mysql
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_db
       MYSQL_USER: test_user
       MYSQL_PASSWORD: test_password
+<<<<<<< HEAD
     ports:
       - "3306:3306"
+=======
+    # ports:
+    #   - "3307:3306"
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
@@ -18,3 +40,20 @@ services:
       retries: 3
     volumes:
       - ./mysql-init:/docker-entrypoint-initdb.d
+<<<<<<< HEAD
+=======
+
+
+# C:\Windows\system32\drivers\etc\hosts (bloco de notas em modo administrador)
+
+# 127.0.0.1 host.docker.internal
+
+## Linux ou Mac (Docker Desktop)
+
+# /etc/hosts
+
+# 127.0.0.1 host.docker.internal
+
+# host.docker.internal:8000/partner1
+# host.docker.internal:8000/partner2
+>>>>>>> 3febb45 (Mudanças nos docker-compose das pastas referentes ao nest, next e golang para rodar o projeto como um todo. Criação do readme.md final para melhor compreensão da execução do projeto.)
